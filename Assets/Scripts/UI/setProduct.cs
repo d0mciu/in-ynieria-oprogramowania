@@ -22,6 +22,6 @@ public class SetProduct : MonoBehaviour
         buyItem buyItemScript = button2.GetComponent<buyItem>();
         buyItemScript.player = whereToSpawn;
         buyItemScript.product = prefabToSet;
-        buyItemScript.priceText.text = priceToSet.text;
+        buyItemScript.priceText = priceToSet;
     }
 }
