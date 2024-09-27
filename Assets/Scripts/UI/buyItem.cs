@@ -18,12 +18,12 @@ public class buyItem : MonoBehaviour
         if (int.TryParse(priceText.text, out price))
         {
             if (moneyHandler.money - price >= 0)
-            {
+            {   
                 canBuy = true;
             }
             else
             {
-                canBuy = false;
+                canBuy = false; 
             }
         }
         else

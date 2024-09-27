@@ -10,7 +10,7 @@ public class moneyAdd : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P)){
-            moneyHandler.money += 100;
+         //   moneyHandler.money += 100;
         }
     }
 }

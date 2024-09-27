@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class moneyHandler : MonoBehaviour
 {
 
-    public static int money;
+    public static int money = 200;
     Text txt;
     private void Awake(){
         txt = GetComponent<Text>();
