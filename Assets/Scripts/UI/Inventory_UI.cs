@@ -16,7 +16,6 @@ public class Inventory_UI : MonoBehaviour
     void Update()
     {
         setup1();
-        setup();
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleInventory();
@@ -28,9 +27,8 @@ public class Inventory_UI : MonoBehaviour
     {
         if (!inventory.activeSelf)
         {
-            setup();
             inventory.SetActive(true);
-           
+            setup();
             
         }
         else

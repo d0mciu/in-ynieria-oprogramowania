@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum Collectabletype
 {
-    NONE, TOMATO_SEED, TOMATO, POTOTO_SEED, POTATO, STONE, PLUM, FLOWER
+    NONE, TOMATO_SEED
 }
 public class Colactable : MonoBehaviour
 {
@@ -20,14 +20,13 @@ public class Colactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (!player.inventory1.Add(this))
-            {
-                player.inventory.Add(this);
-            }
-            Destroy(gameObject);
+
+            player.inventory.Add(this);
+            player.inventory1.Add(this);
+            Destroy(gameObject);            
         }
+            
     }
-
-
+  
 }
 

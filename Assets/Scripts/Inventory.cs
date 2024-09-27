@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
+
     [System.Serializable]
     public class Slot
     {
@@ -22,7 +23,7 @@ public class Inventory
 
         public bool CanAdd()
         {
-            if (count < max) return true;
+            if(count<max) return true;
             else return false;
         }
 
@@ -36,34 +37,37 @@ public class Inventory
 
     public List<Slot> slots = new List<Slot>();
 
-    public Inventory(int numSlots)
+    public Inventory(int numSlots) 
     {
-        for (int i = 0; i < numSlots; i++)
+        for(int i=0; i<numSlots; i++) 
+        
         {
             Slot slot = new Slot();
             slots.Add(slot);
+        
         }
+            
     }
 
-    public bool Add(Colactable item)
+    public void Add(Colactable item) 
     {
-        foreach (Slot slot in slots)
+        foreach(Slot slot in slots)
         {
-            if (slot.type == item.type && slot.CanAdd())
+            if(slot.type == item.type && slot.CanAdd())
             {
                 slot.AddItem(item);
-                return true;
+                return;
             }
         }
-        foreach (Slot slot in slots)
+        foreach(Slot slot in slots)
         {
-            if (slot.type == Collectabletype.NONE)
+            if(slot.type == Collectabletype.NONE)
             {
                 slot.AddItem(item);
-                return true;
+                return;
             }
         }
 
-        return false; // Gdy nie uda³o siê dodaæ przedmiotu
     }
+
 }
